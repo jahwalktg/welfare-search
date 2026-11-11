@@ -206,7 +206,7 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
       <li><strong>공문·보고서 근거</strong> 「근거 복사」를 누르면 『2026년 사회복지시설 관리안내』 p.○○ 「…」 모양으로 복사됩니다.</li>
       <li><strong>새 지침이 나왔을 때</strong> 「작년엔 뭐였지」에 내 업무 낱말(후원금·인건비·안전점검…)을 치면 바뀐 문장만 색으로 보여요. 수백 쪽을 다시 읽지 않아도 됩니다.</li>
       <li><strong>호봉·수당을 확인할 때</strong> 「서울시 처우개선 계획」에서 「경력인정」「시간외」를 치면 그 쪽이 바로 열립니다. 기관·소관 부서 지침이 따로 있으면 그것이 먼저입니다.</li>
-      <li><strong>AI에 물어보기 전에</strong> 지침 문장을 먼저 찾아 AI 주문서에 붙이면 지어낸 답이 줄어요. <a href="https://jahwalktg.github.io/welfare-tools/prompt-guide/index.html" target="_blank" rel="noopener">지침에 물어보기 주문서</a></li>
+      <li><strong>AI에 물어보기 전에</strong> 쪽을 열고 「이 쪽으로 AI에 묻기」를 누르면 그 쪽 글이 근거로 붙은 주문서가 복사됩니다. 지침 문장을 먼저 붙이면 지어낸 답이 줄어요. <a href="https://jahwalktg.github.io/welfare-tools/prompt-guide/index.html" target="_blank" rel="noopener">지침에 물어보기 주문서</a></li>
     </ul>
   </section>
 
@@ -231,7 +231,7 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
 </div>
 
 <div class="pv" id="pv" aria-modal="true" role="dialog"><div class="pvbox">
-  <div class="pvh"><button class="ib" id="pvPrev" type="button">◀ 앞 쪽</button><b id="pvTitle"></b><span class="seg" id="pvMode" role="group" aria-label="쪽 보기 방식"><button type="button" data-m="t">글자로</button><button type="button" data-m="o" title="표·그림까지 지침 원문 모양 그대로">원문 그대로</button></span><span class="sp"></span><button class="ib" id="pvCopy" type="button">이 쪽 근거 복사</button><button class="ib" id="pvNext" type="button">다음 쪽 ▶</button><button class="ib" id="pvClose" type="button">닫기</button></div>
+  <div class="pvh"><button class="ib" id="pvPrev" type="button">◀ 앞 쪽</button><b id="pvTitle"></b><span class="seg" id="pvMode" role="group" aria-label="쪽 보기 방식"><button type="button" data-m="t">글자로</button><button type="button" data-m="o" title="표·그림까지 지침 원문 모양 그대로">원문 그대로</button></span><span class="sp"></span><button class="ib" id="pvCopy" type="button">이 쪽 근거 복사</button><button class="ib" id="pvAsk" type="button" title="이 쪽 글을 근거로 붙인 AI 주문서를 복사합니다">이 쪽으로 AI에 묻기</button><button class="ib" id="pvNext" type="button">다음 쪽 ▶</button><button class="ib" id="pvClose" type="button">닫기</button></div>
   <div class="pvb" id="pvBody"></div>
 </div></div>
 
@@ -437,6 +437,16 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
     try{navigator.clipboard.writeText(text).then(function(){el.textContent='복사했어요: '+text.slice(0,160)+(text.length>160?'…':'');},function(){prompt('복사하세요',text);});}catch(e){prompt('복사하세요',text);}
   }
   $('pvCopy').onclick=function(){cite(pvN);};
+    /* 이 쪽 글을 근거로 붙인 AI 주문서(챗GPT·제미나이에 붙여 묻기). 이 도구는 AI를 부르지 않는다 — 글만 복사한다 */
+    $('pvAsk').onclick=function(){
+      var pg=pageByN(pvKey,pvN),book=DATA[pvKey];if(!pg)return;
+      copy('아래 [지침 원문]만 근거로 제 질문에 답해 주세요.\n\n질문: (여기에 질문을 적으세요)\n\n지켜 주세요:\n'
+        +'- [지침 원문]에 없는 내용은 지어내지 말고 「이 쪽에는 없습니다」라고 답합니다.\n'
+        +'- 답마다 근거가 된 원문 문장을 따옴표로 그대로 옮기고 쪽수를 적습니다.\n'
+        +'- 해석이 갈릴 수 있는 곳은 「담당 기관 확인 필요」라고 표시합니다.\n'
+        +'- 쉬운 말로 먼저 다섯 줄 안으로 답하고, 필요하면 덧붙입니다.\n\n'
+        +'[지침 원문] 『'+book.title+'』('+book.pub+') p.'+pg.p+'\n'+pg.t,$('note'));
+    };
 
   /* ───── 작년엔 뭐였지 (두 해 글자 대조) ───── */
   var ccur='siseol',CMP={};  // CMP[k] = {A:올해, B:작년, map:[], diffs:{}}
