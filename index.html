@@ -176,7 +176,7 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
     <p class="intro">낱말을 치면 지침 전체에서 그 문장과 <b>쪽수</b>가 바로 나옵니다. PDF를 열어 뒤질 필요가 없어요. 쪽수를 누르면 그 쪽 전체를 보고, 「근거 복사」로 쪽수와 문장을 공문·보고서에 붙입니다.</p>
     <p class="plain"><b>이 도구는 AI가 아니에요.</b> 보건복지부·서울특별시가 공개한 지침·안내서의 <b>글자를 그대로 찾아 보여 줄 뿐</b>, 해석·요약·의견은 한 글자도 넣지 않습니다. 답을 "만들어 주는" 것이 아니라 "어느 쪽에 어떤 문장이 있는지"를 찾아 주는 색인이에요. 뜻을 묻고 싶으면 찾은 쪽을 읽거나, 그 문장을 AI 주문서에 붙여 따로 물어보세요.</p>
     <div class="books" id="books"></div>
-    <div class="sbox"><input id="q" type="search" placeholder="예: 후원금, 운영위원회, 경력인정, 안전점검, 시간외수당" autocomplete="off" autofocus><button type="button" id="btnX" aria-label="지우기">×</button></div>
+    <div class="sbox"><input id="q" type="search" placeholder="예: 후원금, 운영위원회, 경력인정, 안전점검, 시간외수당" autocomplete="off"><button type="button" id="btnX" aria-label="지우기">×</button></div>
     <div class="faq" id="faq"></div>
     <div class="stat"><span id="stat">자료를 불러오는 중…</span><span class="opts"><label><input type="checkbox" id="optSpace" checked> 띄어쓰기 무시</label><label><input type="checkbox" id="optAll" checked> 낱말 여러 개면 모두 있는 쪽만</label></span></div>
     <div class="res" id="res"></div>
@@ -689,5 +689,6 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
   if(startCmp)setTab('cmp');
 })();
 </script>
+<script>/* 넓은 화면에서만 찾기 칸에 바로 글자를 넣게 (폰은 자판이 화면을 가려서 뺌) */if(window.innerWidth>700){var _q=document.getElementById("q");if(_q)try{_q.focus();}catch(e){}}</script>
 </body>
 </html>
