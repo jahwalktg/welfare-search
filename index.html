@@ -44,6 +44,11 @@ button{cursor:pointer}
 .page{max-width:1120px;margin:0 auto;padding:20px 16px 32px}
 .top{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:12px}
 .crumb{margin:0;color:var(--muted);font-size:15px}
+.vidbtn{display:inline-flex;align-items:center;gap:6px;min-height:36px;margin-top:8px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--text);text-decoration:none;font-size:14px;font-weight:700}
+.vidbtn:hover{border-color:#E0322B}
+.vidbtn::before{content:"";width:0;height:0;border-left:9px solid #E0322B;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.vidbtn small{font-weight:500;font-size:12px;color:var(--muted)}
+@media print{.vidbtn{display:none!important}}
 h1{margin:2px 0 0;font-size:30px;line-height:1.25;font-weight:700}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0}
 .tabs button{min-height:46px;padding:0 18px;border-radius:12px 12px 0 0;border:1.5px solid var(--line);border-bottom:0;background:var(--bg);font-weight:700;font-size:16px;color:var(--muted)}
@@ -163,6 +168,7 @@ del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
     <div>
       <h1 style="display:flex;gap:12px;align-items:center"><img src="img/hello.png" alt="굿균" width="56" style="width:56px;height:auto">사회복지 지침 찾기</h1>
       <p class="crumb">낱말 하나로 지침 쪽수를 바로 — 보건복지부 2026년 사회복지시설 관리안내·사회복지관 운영관련 업무처리 안내 · 서울시 종사자 처우개선 계획</p>
+      <a class="vidbtn" href="https://www.youtube.com/watch?v=YBQI7aseP3g&amp;list=PLXJUgDGeey5Q" target="_blank" rel="noopener" title="유튜브에서 사용법 영상 보기 (새 창)">사용법 영상 <small>유튜브</small></a>
     </div>
   </header>
 
