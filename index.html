@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<title>사회복지 지침 찾기</title>
+<meta name="description" content="낱말을 치면 2026년 사회복지시설 관리안내·사회복지관 운영관련 업무처리 안내·서울시 사회복지시설 종사자 처우개선 계획 전체에서 그 문장과 쪽수가 바로 나옵니다. 「작년엔 뭐였지」로 2025년 관리안내와 나란히 놓고 바뀐 글자를 봅니다. 인터넷으로 보내지 않고 이 PC 안에서 찾습니다. 출처: 보건복지부·서울특별시.">
+<link rel="canonical" href="https://jahwalktg.github.io/welfare-search/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="사회복지 지침 찾기">
+<meta property="og:title" content="사회복지 지침 찾기">
+<meta property="og:description" content="낱말을 치면 사회복지시설 관리안내·사회복지관 업무처리 안내·서울시 처우개선 계획 전체에서 문장과 쪽수가 바로 나옵니다. 작년 지침과 바뀐 글자 비교.">
+<meta property="og:url" content="https://jahwalktg.github.io/welfare-search/">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --blue:#1A6EFF; --navy:#1A2B50; --red:#E63946;
+  --bg:#F3F6FC; --surface:#FFFFFF; --line:#D5DDEC;
+  --text:#1A2B50; --muted:#5B6885;
+  --blue-bg:#E8F0FF; --amber:#8A5A00; --amber-bg:#FFF1CC; --amber-line:#E5B93C;
+  --red-bg:#FDECEE; --btn-text:#FFFFFF; --mark:#FFE88A;
+  --ins:#D9F5E1; --ins-t:#0B6B2E; --del:#FDE0E3; --del-t:#A3182A; --blk:#FFF8E6;
+  --font:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --blue:#6BA1FF; --navy:#27407A; --red:#FF6B76;
+    --bg:#0E1630; --surface:#17224A; --line:#2F3F73;
+    --text:#EAF0FF; --muted:#A9B6DA;
+    --blue-bg:#1C2D5E; --amber:#FFD166; --amber-bg:#3A2F10; --amber-line:#8F7420;
+    --red-bg:#3D1620; --btn-text:#0E1630; --mark:#6B5A12;
+    --ins:#15422A; --ins-t:#9BE7B5; --del:#4A1A22; --del-t:#FFB3BB; --blk:#241F12;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%;word-break:keep-all;overflow-wrap:anywhere}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.page{max-width:1120px;margin:0 auto;padding:20px 16px 32px}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:12px}
+.crumb{margin:0;color:var(--muted);font-size:15px}
+h1{margin:2px 0 0;font-size:30px;line-height:1.25;font-weight:700}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0}
+.tabs button{min-height:46px;padding:0 18px;border-radius:12px 12px 0 0;border:1.5px solid var(--line);border-bottom:0;background:var(--bg);font-weight:700;font-size:16px;color:var(--muted)}
+.tabs button.on{background:var(--surface);color:var(--text);position:relative;top:1.5px}
+.tabs button .new{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:var(--red);color:#fff;font-size:11px;vertical-align:middle}
+.stage{background:var(--surface);border:1.5px solid var(--line);border-radius:0 16px 16px 16px;padding:20px}
+.tabsec{display:none}.tabsec.on{display:block}
+.intro{margin:0 0 12px;font-size:16px;color:var(--muted);line-height:1.6}
+.books{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.chip{min-height:42px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:700;font-size:15px}
+.chip.on{background:var(--blue);border-color:var(--blue);color:var(--btn-text)}
+.chip small{font-weight:400;opacity:.8;margin-left:4px}
+.chip:disabled{opacity:.5;cursor:not-allowed}
+.sbox{position:relative}
+.sbox input{width:100%;min-height:58px;padding:10px 54px 10px 16px;border:2px solid var(--blue);border-radius:14px;background:var(--surface);font-size:20px}
+.sbox button{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:10px;background:none;color:var(--muted);font-size:20px}
+.faq{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.faq button{min-height:36px;padding:0 11px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font-size:14px}
+.faq button:hover{border-color:var(--blue)}
+.stat{margin:12px 0 6px;font-size:15px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.stat b{color:var(--text)}
+.opts{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;align-items:center}
+.opts label{display:inline-flex;gap:5px;align-items:center}
+.res{display:grid;gap:8px}
+.hit{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface)}
+.hit .pg{min-width:56px;text-align:center;font-weight:800;color:var(--blue);background:var(--blue-bg);border-radius:10px;padding:6px 8px;font-size:15px;line-height:1.2;cursor:pointer;border:0}
+.hit .pg small{display:block;font-weight:500;font-size:11px;opacity:.75}
+.hit .sn{font-size:15px;line-height:1.55}
+.hit .sn p{margin:0 0 4px}
+.hit .sn p+p{border-top:1px dotted var(--line);padding-top:4px}
+.hit .more{font-size:13px;color:var(--muted)}
+.hit .tools{display:grid;gap:4px}
+.ib{min-height:34px;padding:0 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);font-size:13px;white-space:nowrap}
+.ib.pri{background:var(--blue);border-color:var(--blue);color:var(--btn-text);font-weight:700}
+mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:3px}
+ins{background:var(--ins);color:var(--ins-t);text-decoration:none;border-radius:3px;padding:0 1px;font-weight:700}
+del{background:var(--del);color:var(--del-t);border-radius:3px;padding:0 1px}
+.empty{padding:18px;text-align:center;color:var(--muted);border:1.5px dashed var(--line);border-radius:12px}
+/* 비교 카드 */
+.cmp{padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:8px}
+.cmp .hd{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cmp .yr{display:inline-flex;align-items:baseline;gap:4px;padding:5px 10px;border-radius:10px;font-weight:800;font-size:15px;border:0;cursor:pointer}
+.cmp .yr.now{background:var(--blue-bg);color:var(--blue)}
+.cmp .yr.old{background:var(--bg);color:var(--muted);border:1.5px solid var(--line)}
+.cmp .yr small{font-weight:500;font-size:11px}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-size:13px;font-weight:700}
+.badge.same{background:var(--bg);color:var(--muted);border:1.5px solid var(--line)}
+.badge.chg{background:var(--amber-bg);color:var(--amber);border:1.5px solid var(--amber-line)}
+.badge.new{background:var(--ins);color:var(--ins-t)}
+.badge.gone{background:var(--del);color:var(--del-t)}
+.cmp .sp,.pvh .sp{flex:1}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14.5px;line-height:1.6}
+.pair>div{padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);white-space:pre-wrap}
+.pair>div.a{background:var(--surface)}
+.pair .lab{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:3px;white-space:normal}
+.none{color:var(--muted);font-style:italic}
+.cmp .sn{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.gone-list{margin-top:18px}
+.gone-list h3{margin:0 0 8px;font-size:16px;line-height:1.5}
+/* 쪽 보기·비교 보기 */
+.pv{position:fixed;inset:0;background:rgba(10,20,45,.55);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+.pv.on{display:flex}
+.pvbox{width:min(900px,100%);max-height:calc(100% - 32px);display:flex;flex-direction:column;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.pvbox.wide{width:min(1280px,100%)}
+.pvh{display:flex;gap:8px;align-items:center;padding:10px 14px;border-bottom:1.5px solid var(--line);flex-wrap:wrap}
+.pvh b{font-size:17px}
+.pvb{overflow:auto;padding:16px 18px;white-space:pre-wrap;font-size:16px;line-height:1.7}
+/* 원문 그대로(PDF 쪽 그림, 2026-11-11) */
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{min-height:32px;padding:0 10px;border:0;background:var(--surface);color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+.seg button.on{background:var(--navy);color:#fff}
+.seg button:disabled{opacity:.4;cursor:default}
+.pvorig{white-space:normal;display:grid;gap:8px;justify-items:center;width:max-content;min-width:100%}
+.pvorig .zm{display:flex;gap:6px;align-items:center;justify-content:center;font-size:13px;color:var(--muted);position:sticky;left:0}
+.pvorig .zm .ib{min-height:30px}
+.pvorig .note{max-width:min(560px,calc(100vw - 80px));position:sticky;left:0}
+.pvorig .pg{position:relative;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff;line-height:0}
+.pvorig canvas{display:block}
+.pvorig .hl{position:absolute;background:rgba(255,214,0,.42);border-radius:2px;pointer-events:none;mix-blend-mode:multiply}
+.pvorig .msg{font-size:14px;color:var(--muted);line-height:1.6;text-align:center;padding:30px 10px}
+.pvorig .note{font-size:12.5px;color:var(--muted);line-height:1.5;text-align:center}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;align-items:start}
+.colh{position:sticky;top:-16px;background:var(--surface);padding:6px 0;font-weight:800;font-size:15px;border-bottom:1.5px solid var(--line);z-index:1;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.colh .ib{min-height:28px;padding:0 8px;font-size:12px}
+.colh.old{color:var(--muted)}
+.colh.now{color:var(--blue)}
+.colh .hint{font-weight:400;font-size:12px}
+.row{display:contents}
+.row>div{padding:3px 6px;border-bottom:1px dotted var(--line);font-size:15px;line-height:1.65;white-space:pre-wrap}
+.row.eq>div{color:var(--muted)}
+.row.blk>div{background:var(--blk)}
+.legend{font-size:13px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.note{font-size:14px;color:var(--muted);margin:10px 0 0;min-height:1.2em}
+.rule{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:var(--bg);border:1.5px solid var(--line);font-size:14px;color:var(--muted);line-height:1.5}
+.rule strong{color:var(--text)}
+.plain{margin:0 0 14px;padding:10px 14px;border-radius:12px;background:var(--amber-bg);border:1.5px solid var(--amber-line);font-size:15px;line-height:1.6}
+.plain b{color:var(--amber)}
+.maker{margin-top:22px;padding:16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface)}
+.maker h2{margin:0 0 6px;font-size:18px}
+.maker p{margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
+.uses{margin-top:20px;padding:0 4px}
+.uses h2{font-size:19px;margin:0 0 8px}
+.uses ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.uses li{margin:0;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);font-size:15px;line-height:1.6}
+.uses li strong{display:block;margin-bottom:2px;font-size:16px;color:var(--blue)}
+.foot{margin-top:24px;padding:14px 4px 0;border-top:1.5px solid var(--line);font-size:15px;color:var(--muted)}
+.foot p{margin:2px 0}
+.prog{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin:6px 0}
+.prog i{display:block;height:100%;background:var(--blue);width:0;transition:width .15s}
+@media (max-width:700px){.pair,.cols{grid-template-columns:1fr}.colh{position:static}.row>div.l{border-bottom:0;padding-bottom:0}.row>div.r{padding-top:0;margin-bottom:4px}.colh.now{display:none}}
+@media (max-width:560px){.hit{grid-template-columns:auto minmax(0,1fr)}.hit .tools{grid-column:2;grid-auto-flow:column;justify-content:start}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div>
+      <h1 style="display:flex;gap:12px;align-items:center"><img src="img/hello.png" alt="굿균" width="56" style="width:56px;height:auto">사회복지 지침 찾기</h1>
+      <p class="crumb">낱말 하나로 지침 쪽수를 바로 — 보건복지부 2026년 사회복지시설 관리안내·사회복지관 운영관련 업무처리 안내 · 서울시 종사자 처우개선 계획</p>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs">
+    <button type="button" role="tab" data-t="find" class="on">낱말 찾기</button>
+    <button type="button" role="tab" data-t="cmp">작년엔 뭐였지<span class="new">새 기능</span></button>
+  </div>
+
+  <main class="stage">
+  <section class="tabsec on" id="sec-find">
+    <p class="intro">낱말을 치면 지침 전체에서 그 문장과 <b>쪽수</b>가 바로 나옵니다. PDF를 열어 뒤질 필요가 없어요. 쪽수를 누르면 그 쪽 전체를 보고, 「근거 복사」로 쪽수와 문장을 공문·보고서에 붙입니다.</p>
+    <p class="plain"><b>이 도구는 AI가 아니에요.</b> 보건복지부·서울특별시가 공개한 지침·안내서의 <b>글자를 그대로 찾아 보여 줄 뿐</b>, 해석·요약·의견은 한 글자도 넣지 않습니다. 답을 "만들어 주는" 것이 아니라 "어느 쪽에 어떤 문장이 있는지"를 찾아 주는 색인이에요. 뜻을 묻고 싶으면 찾은 쪽을 읽거나, 그 문장을 AI 주문서에 붙여 따로 물어보세요.</p>
+    <div class="books" id="books"></div>
+    <div class="sbox"><input id="q" type="search" placeholder="예: 후원금, 운영위원회, 경력인정, 안전점검, 시간외수당" autocomplete="off" autofocus><button type="button" id="btnX" aria-label="지우기">×</button></div>
+    <div class="faq" id="faq"></div>
+    <div class="stat"><span id="stat">자료를 불러오는 중…</span><span class="opts"><label><input type="checkbox" id="optSpace" checked> 띄어쓰기 무시</label><label><input type="checkbox" id="optAll" checked> 낱말 여러 개면 모두 있는 쪽만</label></span></div>
+    <div class="res" id="res"></div>
+    <p class="note" id="note" role="status"></p>
+    <p class="rule"><strong>출처: 보건복지부 『2026년 사회복지시설 관리안내』</strong> · 보건복지부 『2026년 사회복지관 운영관련 업무처리 안내』 · 서울특별시 『2026년 사회복지시설 종사자 처우개선 계획』(공개용). 각 기관이 인터넷에 공개한 자료의 본문 글자를 그대로 넣었고, 쪽수는 책에 인쇄된 쪽입니다. 표·그림은 글자만 남아 줄이 섞일 수 있고, 서울시 계획은 한글 문서를 PDF로 바꾼 것이라 낱말 순서가 섞여 보이기도 합니다. 쪽 보기에서 「원문 그대로」를 눌러 지침 원문 쪽을 확인하세요. 노인·장애인·아동 등 시설 유형별 사업안내는 의견을 받아 더해 갑니다. 해마다 새 지침이 나오면 바꿉니다.</p>
+  </section>
+
+  <section class="tabsec" id="sec-cmp">
+    <p class="intro"><b>"이거 작년엔 어떻게 돼 있었지?"</b> 낱말을 치면 <b>올해(2026) 지침</b>에서 찾은 쪽마다 <b>작년(2025) 지침의 같은 자리</b>를 찾아 나란히 놓고, <ins>올해 새로 들어온 글자</ins>와 <del>작년에는 있었는데 빠진 글자</del>를 표시합니다. 띄어쓰기·줄 바꿈이 달라진 것은 바뀐 것으로 치지 않습니다.</p>
+    <p class="plain"><b>이것도 글자 대조일 뿐이에요.</b> 두 해의 글자를 기계적으로 맞춰 본 결과이고, 무엇이 "중요한 변경"인지는 판단하지 않습니다. 복지부가 정리한 공식 변경 내용은 관리안내 앞쪽 「2026 주요 개정 사항」 표에 있어요 — <button type="button" class="ib" id="btnOfficial">공식 변경 내용 표 열기</button></p>
+    <div class="books" id="cbooks"></div>
+    <div class="sbox"><input id="cq" type="search" placeholder="예: 후원금, 인건비, 경력인정, 안전점검, 운영위원회" autocomplete="off"><button type="button" id="cbtnX" aria-label="지우기">×</button></div>
+    <div class="faq" id="cfaq"></div>
+    <div class="stat"><span id="cstat">자료를 불러오는 중…</span><span class="opts"><label><input type="checkbox" id="optOnlyChg"> 바뀐 쪽만 보기</label><button type="button" class="ib" id="btnAllChg">낱말 없이 바뀐 쪽 전부 보기</button></span></div>
+    <div class="prog" id="prog" hidden><i></i></div>
+    <div class="res" id="cres"></div>
+    <div class="gone-list" id="gone" hidden></div>
+    <p class="note" id="cnote" role="status"></p>
+    <p class="rule"><strong>어떻게 맞추나요?</strong> 올해 쪽의 문장들이 작년 어느 쪽에 가장 많이 들어 있는지로 짝을 찾고(쪽수가 밀려도 따라감), 그 두 쪽의 글자를 띄어쓰기·문장부호를 뺀 상태로 대조합니다. 표가 많은 쪽은 줄이 섞여 어긋나게 보일 수 있어요. 짝이 틀렸으면 「나란히 보기」 창에서 작년 쪽을 ◀▶로 한 쪽씩 옮겨 보세요. 사회복지관 안내와 서울시 계획은 작년판 자료가 들어오면 같은 방식으로 붙습니다.</p>
+  </section>
+  </main>
+
+  <section class="uses" aria-labelledby="usesTitle">
+    <h2 id="usesTitle">이럴 때 좋아요</h2>
+    <ul>
+      <li><strong>동료가 물었을 때</strong> "비지정후원금으로 이거 써도 되나요?" — 「비지정후원금」을 치고 그 쪽을 열어 원문을 같이 봅니다.</li>
+      <li><strong>공문·보고서 근거</strong> 「근거 복사」를 누르면 『2026년 사회복지시설 관리안내』 p.○○ 「…」 모양으로 복사됩니다.</li>
+      <li><strong>새 지침이 나왔을 때</strong> 「작년엔 뭐였지」에 내 업무 낱말(후원금·인건비·안전점검…)을 치면 바뀐 문장만 색으로 보여요. 수백 쪽을 다시 읽지 않아도 됩니다.</li>
+      <li><strong>호봉·수당을 확인할 때</strong> 「서울시 처우개선 계획」에서 「경력인정」「시간외」를 치면 그 쪽이 바로 열립니다. 기관·소관 부서 지침이 따로 있으면 그것이 먼저입니다.</li>
+      <li><strong>AI에 물어보기 전에</strong> 지침 문장을 먼저 찾아 AI 주문서에 붙이면 지어낸 답이 줄어요. <a href="https://jahwalktg.github.io/welfare-tools/prompt-guide/index.html" target="_blank" rel="noopener">지침에 물어보기 주문서</a></li>
+    </ul>
+  </section>
+
+  <section class="uses" aria-labelledby="ruleTitle">
+    <h2 id="ruleTitle">쓰기 전에</h2>
+    <ul>
+      <li><strong>참고용입니다</strong> 한 현장 실무자의 개인 경험으로 만든 도구입니다. 쓰고 난 결과의 책임은 쓰는 분에게 있으니 <strong>원문과 근거, 담당 기관 확인</strong>을 꼭 하세요.</li>
+      <li><strong>시설·지자체마다 다릅니다</strong> 여기 책은 공통 지침입니다. 시설 유형별 사업안내, 시·군·구와 소관 부서 지침, 법인 규정이 따로 있으면 그것을 함께 봅니다.</li>
+      <li><strong>줄인 시간은 동료와 클라이언트에게</strong> 쪽을 뒤지는 시간을 줄여 사람에게 쓰자는 것이 이 도구의 목적입니다. 우리 기관에 맞는 도구가 필요하면 의견으로 알려 주세요. 맞춰 만들어 드립니다.</li>
+    </ul>
+  </section>
+
+  <section class="maker" aria-labelledby="makerTitle">
+    <h2 id="makerTitle">만든 사람 · 서울강남지역자활센터 김태균</h2>
+    <p>부산서구지역자활센터를 거쳐 지금은 서울강남지역자활센터에서 일하는 사회복지 현장 실무자입니다. 지침을 펼쳐 쪽을 뒤지는 시간을 줄이고, 근거를 바로 보고 말할 수 있게 하고 싶어 만들었습니다. 이 도구는 지침 글자를 찾아 줄 뿐 판단은 담지 않으니, 최종 확인은 원문과 담당 기관에서 해 주세요. 틀린 쪽수나 더 넣었으면 하는 지침(우리 시설 유형의 사업안내 등)이 있으면 알려 주세요.</p>
+  </section>
+
+  <footer class="foot">
+    <p><strong>이 PC 안에서만 찾습니다.</strong> 친 글자는 인터넷으로 보내지 않습니다. 저장하는 것도 없습니다.</p>
+    <p>만든 사람: 서울강남지역자활센터 김태균 · 의견 <a href="https://docs.google.com/forms/d/e/1FAIpQLScT2se9k9-LEl0YCyvyBpE8xNlZZSZ9UC67DmWotTKymzqV7Q/viewform" target="_blank" rel="noopener">의견 설문</a> · <a href="mailto:jahwalktg@gmail.com?subject=%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%20%EC%A7%80%EC%B9%A8%20%EC%B0%BE%EA%B8%B0%20%EC%9D%98%EA%B2%AC">jahwalktg@gmail.com</a> · 만든 사람의 다른 도구: <a href="https://jahwalktg.github.io/welfare-tools/" target="_blank" rel="noopener">사회복지사 업무 도구</a> · <a href="https://jahwalktg.github.io/welfare-tools/basic/" target="_blank" rel="noopener">국기초 가늠표(복지 현장판)</a> · <a href="https://jahwalktg.github.io/jahwal-search/" target="_blank" rel="noopener">자활 지침 찾기</a></p>
+  </footer>
+</div>
+
+<div class="pv" id="pv" aria-modal="true" role="dialog"><div class="pvbox">
+  <div class="pvh"><button class="ib" id="pvPrev" type="button">◀ 앞 쪽</button><b id="pvTitle"></b><span class="seg" id="pvMode" role="group" aria-label="쪽 보기 방식"><button type="button" data-m="t">글자로</button><button type="button" data-m="o" title="표·그림까지 지침 원문 모양 그대로">원문 그대로</button></span><span class="sp"></span><button class="ib" id="pvCopy" type="button">이 쪽 근거 복사</button><button class="ib" id="pvNext" type="button">다음 쪽 ▶</button><button class="ib" id="pvClose" type="button">닫기</button></div>
+  <div class="pvb" id="pvBody"></div>
+</div></div>
+
+<div class="pv" id="dv" aria-modal="true" role="dialog"><div class="pvbox wide">
+  <div class="pvh"><b id="dvTitle">두 해 나란히 보기</b><span class="legend"><ins>올해 새 글자</ins><del>작년에만 있던 글자</del><span>· 회색 줄 = 같음</span></span><span class="sp"></span><button class="ib" id="dvCopy" type="button">바뀐 문장 복사</button><button class="ib" id="dvClose" type="button">닫기</button></div>
+  <div class="pvb" id="dvBody" style="white-space:normal"></div>
+</div></div>
+
+<script>
+(function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id);};
+  /* 책 목록. prev = 작년판 자료(있는 책만 「작년엔 뭐였지」에 나옴). 새해: 올해 파일을 prev로 내리고 새 파일을 k에 */
+  var BOOKS=[
+    {k:'siseol',name:'사회복지시설 관리안내',pages:'273쪽',year:'2026',prev:{k:'siseol-2025',year:'2025'},pdf:'pdf/siseol-2026.pdf'},
+    {k:'bokjigwan',name:'사회복지관 업무처리 안내',pages:'93쪽',year:'2026',pdf:'pdf/bokjigwan-2026.pdf'},
+    {k:'seoul',name:'서울시 처우개선 계획',pages:'41쪽',year:'2026',pdf:'pdf/seoul-2026.pdf'}
+  ];
+  /* 원문 PDF: 쪽 보기 「원문 그대로」에서 그 쪽만 PDF.js로 그린다. data/*.json 의 n = PDF 쪽 번호. 작년 자료(prev)는 PREV_PDF.
+     GitHub Pages가 바이트 범위 요청을 받아 주므로 책 전체를 받지 않고 필요한 부분만 받는다(disableAutoFetch). 새해엔 새 PDF를 pdf/에 넣고 pdf: 만 바꾼다 */
+  var PREV_PDF={'siseol-2025':'pdf/siseol-2025.pdf'};
+  var FAQ={siseol:['후원금','비지정후원금','전용계좌','운영위원회','시설장','상근','채용','결격사유','인건비','경력인정','호봉','예산','예비비','결산','이월','계약','보조금','안전점검','책임보험','시설평가','희망이음','개인정보','인권','업무추진비','법인전입금','수익사업','퇴직적립금','휴지','감사'],
+           bokjigwan:['사례관리','서비스제공','지역조직화','인력기준','운영위원회','사업비','평가','현황보고서','이용료','자원봉사','사업계획','희망이음','위탁'],
+           seoul:['기본급','정액급식비','명절휴가비','시간외','가족수당','경력인정','호봉','복지포인트','병가','장기근속','대체인력','건강검진','단일임금','관리자 수당','통상임금','직급']};
+  var CFAQ={siseol:['후원금','인건비','경력인정','호봉','보조금','예산','결산','안전점검','책임보험','운영위원회','시설장','채용','희망이음','개인정보','인권','평가','신고','교육']};
+  var DATA={},cur='siseol',timer,ctimer;
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var SKIP=/[\s·･‧ㆍ,.()\[\]「」『』〈〉<>:;/\-–—：；，．～∼~＊*（）]/;
+  function norm(s){return s.toLowerCase().replace(/[\s·･‧ㆍ,.()\[\]「」『』〈〉<>:;/\-–—：；，．～∼~＊*（）]/g,'');}
+  function prep(book){
+    book.pages.forEach(function(pg){
+      if(pg.nt)return;var t=pg.t,n='',map=[];
+      for(var i=0;i<t.length;i++){var c=t[i].toLowerCase();if(SKIP.test(c))continue;n+=c;map.push(i);}
+      pg.nt=n;pg.map=map;
+    });
+  }
+  function load(key,statEl){
+    if(DATA[key])return Promise.resolve(DATA[key]);
+    if(statEl)statEl.textContent='자료를 불러오는 중…';
+    return fetch('data/'+key+'.json?v=2').then(function(r){return r.json();}).then(function(b){prep(b);DATA[key]=b;return b;});
+  }
+  function bookOf(k){return BOOKS.find(function(b){return b.k===k;});}
+
+  /* ───── 탭 ───── */
+  function setTab(t){
+    document.querySelectorAll('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);b.setAttribute('aria-selected',b.dataset.t===t);});
+    $('sec-find').classList.toggle('on',t==='find');$('sec-cmp').classList.toggle('on',t==='cmp');
+    if(t==='cmp'){renderCBooks();crun();}
+  }
+  $('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTab(b.dataset.t);});
+
+  /* ───── 낱말 찾기 ───── */
+  function renderBooks(){
+    $('books').innerHTML=BOOKS.map(function(b){return '<button type="button" class="chip'+(b.k===cur?' on':'')+'" data-k="'+b.k+'">'+b.name+'<small>'+b.pages+'</small></button>';}).join('');
+    $('faq').innerHTML=FAQ[cur].map(function(f){return '<button type="button" data-q="'+esc(f)+'">'+esc(f)+'</button>';}).join('');
+  }
+  $('books').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;cur=b.dataset.k;renderBooks();run();});
+  $('faq').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;$('q').value=b.dataset.q;run();});
+  $('q').addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,60);});
+  $('btnX').onclick=function(){$('q').value='';run();$('q').focus();};
+
+  function termsOf(raw,sp){
+    raw=raw.trim();if(!raw)return [];
+    if(!sp)return [norm(raw)].filter(Boolean);
+    return raw.split(/\s+/).map(norm).filter(Boolean);
+  }
+  function terms(){return termsOf($('q').value,$('optSpace').checked);}
+  function findAll(nt,t){var out=[],i=0;while((i=nt.indexOf(t,i))>=0){out.push([i,i+t.length]);i+=1;if(out.length>50)break;}return out;}
+  function snippet(pg,ranges){
+    var t=pg.t,m=pg.map,outs=[],used=[];
+    ranges.sort(function(a,b){return a[0]-b[0];});
+    ranges.forEach(function(r){
+      var s=m[r[0]],e=m[Math.min(r[1]-1,m.length-1)]+1;
+      if(used.some(function(u){return s<u[1]&&e>u[0];}))return;
+      var a=Math.max(0,s-70),b=Math.min(t.length,e+90);used.push([a,b]);
+      outs.push({a:a,b:b,seg:t.slice(a,b).replace(/\n+/g,' ')});
+    });
+    return outs.slice(0,3);
+  }
+  function termRe(t){return new RegExp(t.split('').map(function(c){return c.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('[\\s·･‧ㆍ,.()\\[\\]「」『』〈〉<>:;/\\-–—：；，．～∼~＊*（）]*'),'gi');}
+  function markHtml(text,ts){
+    var h=esc(text);
+    ts.forEach(function(t){if(t.length<1)return;h=h.replace(termRe(t),function(x){return '<mark>'+x+'</mark>';});});
+    return h;
+  }
+  function searchPages(book,ts,all){
+    var hits=[];
+    book.pages.forEach(function(pg){
+      var rs=[],ok=all,any=false;
+      ts.forEach(function(t){var f=findAll(pg.nt,t);if(f.length){any=true;rs=rs.concat(f);}else if(all)ok=false;});
+      if(all?ok:any)hits.push({pg:pg,n:rs.length,rs:rs});
+    });
+    hits.sort(function(a,b){var fa=/^\d+$/.test(a.pg.p)?0:1,fb=/^\d+$/.test(b.pg.p)?0:1;return fa-fb||b.n-a.n||a.pg.n-b.pg.n;});
+    return hits;
+  }
+  function run(){
+    var ts=terms();
+    load(cur,$('stat')).then(function(book){
+      var res=$('res');
+      if(!ts.length){res.innerHTML='';$('stat').innerHTML='<b>'+esc(book.title)+'</b> — '+book.pages.length+'쪽을 바로 찾을 준비가 됐어요. 위에 낱말을 치거나 자주 찾는 말을 누르세요.';return;}
+      var hits=searchPages(book,ts,$('optAll').checked),shown=hits.slice(0,80);
+      $('stat').innerHTML='<b>'+hits.length+'쪽</b>에서 찾았어요'+(hits.length>80?' (많이 나온 80쪽만 보여요 — 낱말을 더 붙여 보세요)':'')+' · '+esc(book.title);
+      if(!hits.length){res.innerHTML='<div class="empty">없어요. 낱말을 짧게 하거나(예: 「후원금 영수증」→「후원금」), 다른 지침 묶음을 눌러 보세요.</div>';return;}
+      res.innerHTML=shown.map(function(h){
+        var sn=snippet(h.pg,h.rs);
+        return '<div class="hit"><button type="button" class="pg" data-n="'+h.pg.n+'">'+esc(h.pg.p)+'쪽<small>'+h.n+'곳</small></button><div class="sn">'+sn.map(function(s){return '<p>… '+markHtml(s.seg,ts)+' …</p>';}).join('')+(h.n>sn.length?'<span class="more">+ '+(h.n-sn.length)+'곳 더 (쪽 열기)</span>':'')+'</div><div class="tools"><button type="button" class="ib" data-cite="'+h.pg.n+'">근거 복사</button>'+(bookOf(cur).prev?'<button type="button" class="ib" data-cmpn="'+h.pg.n+'">작년엔?</button>':'')+'</div></div>';
+      }).join('');
+    }).catch(function(e){console.error(e);$('stat').textContent='자료를 불러오지 못했어요. 인터넷 연결을 확인하고 새로고침해 주세요.';});
+  }
+
+  /* ───── 쪽 보기 ───── */
+  var pvN=0,pvKey='siseol';
+  function pageByN(key,n){return DATA[key].pages.find(function(p){return p.n===n;});}
+  var pvTs=[],pvMode='t';
+  try{pvMode=localStorage.getItem('welfare.search.pvmode')==='o'?'o':'t';}catch(e){}
+  function pdfOf(key){var b=bookOf(key);return b&&b.pdf?b.pdf:(PREV_PDF[key]||'');}
+  function openPage(n,key,ts){
+    key=key||cur;var pg=pageByN(key,n);if(!pg)return;pvN=n;pvKey=key;ts=ts||terms();pvTs=ts;
+    $('pvTitle').textContent=DATA[key].title+' · '+pg.p+'쪽';
+    $('pv').classList.add('on');
+    var has=!!pdfOf(key);
+    $('pvMode').querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===(has?pvMode:'t'));if(b.dataset.m==='o'){b.disabled=!has;b.title=has?'표·그림까지 지침 원문 모양 그대로':'이 책은 원문 파일이 아직 없어요';}});
+    if(has&&pvMode==='o'){renderOrig(n,key,ts);return;}
+    $('pvBody').innerHTML=markHtml(pg.t,ts);
+    var m=$('pvBody').querySelector('mark');if(m)m.scrollIntoView({block:'center'});else $('pvBody').scrollTop=0;
+  }
+  $('pvMode').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;pvMode=b.dataset.m;try{localStorage.setItem('welfare.search.pvmode',pvMode);}catch(x){}openPage(pvN,pvKey,pvTs);});
+
+  /* ───── 원문 그대로: PDF.js(cdnjs 3.11.174) — 처음 누를 때만 불러온다. 워커는 다른 출처라 글자를 받아 Blob 주소로 ───── */
+  var PDFJS='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/',pdfLib=null,pdfDocs={},rTok=0,pvZoom=1;   // pvZoom: 휴대폰에선 쪽이 작아 ＋ 크게(1·1.5·2·3배, 옆으로 밀어 보기)
+  function loadLib(){
+    if(pdfLib)return pdfLib;
+    pdfLib=new Promise(function(res,rej){var s=document.createElement('script');s.src=PDFJS+'pdf.min.js';s.onerror=function(){pdfLib=null;rej(new Error('lib'));};
+      s.onload=function(){fetch(PDFJS+'pdf.worker.min.js').then(function(r){return r.text();}).then(function(t){window.pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([t],{type:'text/javascript'}));res(window.pdfjsLib);}).catch(function(e){pdfLib=null;rej(e);});};
+      document.head.appendChild(s);});
+    return pdfLib;
+  }
+  function getDoc(key){
+    if(!pdfDocs[key])pdfDocs[key]=loadLib().then(function(L){return L.getDocument({url:pdfOf(key),disableAutoFetch:true,disableStream:true,rangeChunkSize:65536}).promise;}).catch(function(e){delete pdfDocs[key];throw e;});
+    return pdfDocs[key];
+  }
+  var rzT;window.addEventListener('resize',function(){clearTimeout(rzT);rzT=setTimeout(function(){if($('pv').classList.contains('on')&&$('pvBody').querySelector('.pvorig canvas'))renderOrig(pvN,pvKey,pvTs);},300);});   // 창 크기가 바뀌면 원문 쪽을 다시 그림
+  function renderOrig(n,key,ts){
+    var tok=++rTok,body=$('pvBody');
+    body.innerHTML='<div class="pvorig"><div class="msg">원문 쪽을 불러오는 중… (처음 한 번은 조금 걸려요)</div></div>';body.scrollTop=0;
+    var box=body.firstChild;
+    getDoc(key).then(function(doc){return doc.getPage(n);}).then(function(page){
+      if(tok!==rTok)return;
+      var cw=body.clientWidth;if(cw<320)cw=Math.min(window.innerWidth-32,900);   // 창이 가려져 폭을 못 잴 때는 화면 폭으로
+      var w=Math.max(280,Math.min(cw-54,1100))*pvZoom,   /* 54 = 양쪽 여백 36 + 세로 스크롤 막대 자리(불러오는 동안엔 막대가 없어 폭이 넓게 잡힘) */vp1=page.getViewport({scale:1}),vp=page.getViewport({scale:w/vp1.width}),dpr=Math.min(window.devicePixelRatio||1,2.5);
+      var wrap=document.createElement('div');wrap.className='pg';wrap.style.width=vp.width+'px';wrap.style.height=vp.height+'px';
+      var cv=document.createElement('canvas');cv.width=Math.floor(vp.width*dpr);cv.height=Math.floor(vp.height*dpr);cv.style.width=vp.width+'px';cv.style.height=vp.height+'px';wrap.appendChild(cv);
+      return page.render({canvasContext:cv.getContext('2d'),viewport:vp,transform:dpr!==1?[dpr,0,0,dpr,0,0]:null}).promise.then(function(){
+        if(tok!==rTok)return;
+        box.innerHTML='';
+        var zm=document.createElement('div');zm.className='zm';
+        zm.innerHTML='<button class="ib" type="button" data-z="-1"'+(pvZoom<=1?' disabled':'')+'>－ 작게</button><span>'+Math.round(pvZoom*100)+'%</span><button class="ib" type="button" data-z="1"'+(pvZoom>=3?' disabled':'')+'>＋ 크게</button>';
+        zm.onclick=function(e){var b=e.target.closest('button');if(!b)return;var Z=[1,1.5,2,3],i=Z.indexOf(pvZoom)+(+b.dataset.z);pvZoom=Z[Math.max(0,Math.min(Z.length-1,i))];renderOrig(n,key,ts);};
+        box.appendChild(zm);box.appendChild(wrap);
+        var nt=document.createElement('div');nt.className='note';nt.textContent='지침 원문 쪽 그대로예요. 찾은 낱말은 노랗게 표시돼요(여러 줄에 걸친 말은 표시가 안 될 수 있어요). 글을 복사하려면 「글자로」를 눌러 주세요.';box.appendChild(nt);
+        if(!ts.length)return;
+        return page.getTextContent().then(function(tc){
+          if(tok!==rTok)return;var first=null;
+          tc.items.forEach(function(it){
+            var s=norm(it.str||'');if(!s||!ts.some(function(t){return s.indexOf(t)>=0||(t.length>=2&&t.indexOf(s)>=0&&s.length>=2);}))return;
+            var tx=window.pdfjsLib.Util.transform(vp.transform,it.transform),fh=Math.hypot(tx[2],tx[3]),W=it.width*vp.scale,L=it.str.length||1,spans=[];
+            // 한 조각 안에서 낱말 자리만(글자 수 비율로 어림). 낱말이 여러 조각에 걸쳐 이 조각이 낱말의 일부일 때는 조각 전체
+            ts.forEach(function(t){var re=termRe(t),m;while((m=re.exec(it.str))){if(!m[0].length){re.lastIndex++;continue;}spans.push([m.index/L,m[0].length/L]);}});
+            if(!spans.length)spans=[[0,1]];
+            spans.forEach(function(sp){var d=document.createElement('div');d.className='hl';d.style.left=(tx[4]+W*sp[0]-1)+'px';d.style.top=(tx[5]-fh*0.9)+'px';d.style.width=Math.max(4,W*sp[1]+2)+'px';d.style.height=(fh*1.15)+'px';wrap.appendChild(d);first=first||d;});
+          });
+          if(first)first.scrollIntoView({block:'center'});
+        });
+      });
+    }).catch(function(){
+      if(tok!==rTok)return;
+      box.innerHTML='<div class="msg">원문 쪽을 불러오지 못했어요. 인터넷 연결을 확인하거나 「글자로」를 눌러 주세요.</div>';
+    });
+  }
+  function step(d){var ps=DATA[pvKey].pages,i=ps.findIndex(function(p){return p.n===pvN;});if(i<0)return;i+=d;if(i<0||i>=ps.length)return;openPage(ps[i].n,pvKey,[]);}
+  $('pvPrev').onclick=function(){step(-1);};$('pvNext').onclick=function(){step(1);};
+  $('pvClose').onclick=function(){$('pv').classList.remove('on');};
+  $('pv').addEventListener('click',function(e){if(e.target===$('pv'))$('pv').classList.remove('on');});
+  $('dvClose').onclick=function(){$('dv').classList.remove('on');};
+  $('dv').addEventListener('click',function(e){if(e.target===$('dv'))$('dv').classList.remove('on');});
+  document.addEventListener('keydown',function(e){
+    if($('pv').classList.contains('on')){if(e.key==='Escape')$('pv').classList.remove('on');if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);return;}
+    if($('dv').classList.contains('on')&&e.key==='Escape')$('dv').classList.remove('on');
+  });
+  $('res').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    if(b.dataset.n)openPage(+b.dataset.n);
+    if(b.dataset.cite)cite(+b.dataset.cite);
+    if(b.dataset.cmpn){var n=+b.dataset.cmpn,ts=terms();$('cq').value=$('q').value;ccur=cur;setTab('cmp');ensureCmp().then(function(){openDiff(n,null,ts);});}
+  });
+  function cite(n){
+    var key=$('pv').classList.contains('on')?pvKey:cur,pg=pageByN(key,n),book=DATA[key],ts=terms();
+    var sn=ts.length?snippet(pg,ts.reduce(function(a,t){return a.concat(findAll(pg.nt,t));},[])):[];
+    var body=sn.length?sn[0].seg.trim():pg.t.replace(/\n+/g,' ').slice(0,120);
+    copy('『'+book.title+'』('+book.pub+') p.'+pg.p+' — "…'+body+'…"',$('note'));
+  }
+  function copy(text,el){
+    try{navigator.clipboard.writeText(text).then(function(){el.textContent='복사했어요: '+text.slice(0,160)+(text.length>160?'…':'');},function(){prompt('복사하세요',text);});}catch(e){prompt('복사하세요',text);}
+  }
+  $('pvCopy').onclick=function(){cite(pvN);};
+
+  /* ───── 작년엔 뭐였지 (두 해 글자 대조) ───── */
+  var ccur='siseol',CMP={};  // CMP[k] = {A:올해, B:작년, map:[], diffs:{}}
+  function renderCBooks(){
+    $('cbooks').innerHTML=BOOKS.map(function(b){
+      var has=!!b.prev;
+      return '<button type="button" class="chip'+(b.k===ccur?' on':'')+'" data-k="'+b.k+'" '+(has?'':'disabled title="2025년판 자료가 들어오면 붙습니다"')+'>'+b.name+'<small>'+(has?b.prev.year+' ↔ '+b.year:'작년판 준비 중')+'</small></button>';
+    }).join('');
+    $('cfaq').innerHTML=(CFAQ[ccur]||[]).map(function(f){return '<button type="button" data-q="'+esc(f)+'">'+esc(f)+'</button>';}).join('');
+  }
+  $('cbooks').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b||b.disabled)return;ccur=b.dataset.k;renderCBooks();crun();});
+  $('cfaq').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;$('cq').value=b.dataset.q;crun();});
+  $('cq').addEventListener('input',function(){clearTimeout(ctimer);ctimer=setTimeout(crun,80);});
+  $('cbtnX').onclick=function(){$('cq').value='';crun();$('cq').focus();};
+  $('optOnlyChg').onchange=function(){crun();};
+  $('btnAllChg').onclick=function(){$('cq').value='';$('optOnlyChg').checked=true;crun(true);};
+  $('btnOfficial').onclick=function(){load('siseol',$('cstat')).then(function(){var pg=DATA.siseol.pages.find(function(p){return /주요\s*개정\s*사항/.test(p.t)&&!/^\d+$/.test(p.p)&&p.p!=='앞';});openPage(pg?pg.n:DATA.siseol.pages[0].n,'siseol',[]);});};
+
+  /* 비교용 줄: 쪽 번호 줄·머리말(여러 쪽에 반복되는 6글자↑ 줄)은 뺀다 */
+  function buildLines(book){
+    if(book.noise)return;
+    var freq={};
+    book.pages.forEach(function(pg){var seen={};pg.t.split('\n').forEach(function(l){var n=norm(l);if(n.length>=6&&!seen[n]){seen[n]=1;freq[n]=(freq[n]||0)+1;}});});
+    var noise={};Object.keys(freq).forEach(function(n){if(freq[n]>=5)noise[n]=1;});
+    book.noise=noise;
+    book.pages.forEach(function(pg){
+      var ls=[];
+      pg.t.split('\n').forEach(function(l){
+        var s=l.trim();if(!s)return;var n=norm(s);if(!n||/^\d+$/.test(n)||noise[n])return;
+        ls.push({t:s,n:n});
+      });
+      pg.cl=ls;
+    });
+  }
+  /* 올해 쪽 → 작년 쪽 짝: 올해 쪽 줄들이 작년 어느 쪽에 가장 많이 있는지(글자 수 가중) */
+  function pairPages(A,B){
+    var idx={};
+    B.pages.forEach(function(pg,j){pg.cl.forEach(function(l){(idx[l.n]||(idx[l.n]=[])).push(j);});});
+    var map=[];
+    A.pages.forEach(function(pg,i){
+      var sc={},tot=0;
+      pg.cl.forEach(function(l){tot+=l.n.length;var js=idx[l.n];if(!js)return;var w=l.n.length/js.length;js.forEach(function(j){sc[j]=(sc[j]||0)+w;});});
+      var best=-1,bs=0;Object.keys(sc).forEach(function(j){if(sc[j]>bs){bs=sc[j];best=+j;}});
+      if(best<0||bs/Math.max(tot,1)<0.12){
+        /* 글자로 안 잡히면(표·짧은 줄) 쪽 번호가 같은 작년 쪽을 임시 짝으로 */
+        var same=/^\d+$/.test(pg.p)?B.pages.findIndex(function(q){return q.p===pg.p;}):-1;
+        map[i]={j:same,weak:true};
+      }else map[i]={j:best,weak:false};
+    });
+    return map;
+  }
+  /* LCS. a,b: 배열 또는 문자열. fa/fb[i]=1 → 상대에 없음. cap 넘으면 전부 다름 */
+  function lcsFlags(a,b,cap){
+    var n=a.length,m=b.length,fa=new Uint8Array(n),fb=new Uint8Array(m);
+    if(!n||!m||n*m>cap){fa.fill(1);fb.fill(1);return {fa:fa,fb:fb};}
+    var W=m+1,D=new Uint16Array((n+1)*W),i,j;
+    for(i=1;i<=n;i++){var ai=a[i-1],row=i*W,prow=(i-1)*W;for(j=1;j<=m;j++){D[row+j]=ai===b[j-1]?D[prow+j-1]+1:Math.max(D[prow+j],D[row+j-1]);}}
+    i=n;j=m;
+    while(i>0&&j>0){if(a[i-1]===b[j-1]){i--;j--;}else if(D[(i-1)*W+j]>=D[i*W+j-1]){fa[i-1]=1;i--;}else{fb[j-1]=1;j--;}}
+    while(i>0){fa[--i]=1;}while(j>0){fb[--j]=1;}
+    return {fa:fa,fb:fb};
+  }
+  /* 줄 LCS → 같은 줄 / 다른 묶음. 묶음 안은 줄을 이어 붙여 글자 LCS(줄 바꿈 차이 무시) */
+  function diffPages(pa,pb){
+    var la=pa.cl,lb=pb?pb.cl:[];
+    var r=lcsFlags(la.map(function(l){return l.n;}),lb.map(function(l){return l.n;}),40000);
+    var rows=[],i=0,j=0,changed=0;
+    function plain(l){return {t:l.t,spans:[[l.t,0]],any:false};}
+    function build(lines,pos,flags){
+      var per=lines.map(function(l){return new Uint8Array(l.n.length);});
+      for(var x=0;x<flags.length;x++)if(flags[x])per[pos[x][0]][pos[x][1]]=1;
+      return lines.map(function(l,k){
+        var f=per[k],spans=[],curF=-1,buf='',any=false,ni=0;
+        for(var c=0;c<l.t.length;c++){
+          var isN=!SKIP.test(l.t[c].toLowerCase());
+          var fl=isN?f[ni]:((curF===1&&ni<f.length&&f[ni])?1:0);
+          if(isN)ni++;
+          if(fl)any=true;
+          if(fl!==curF&&buf){spans.push([buf,curF]);buf='';}
+          curF=fl;buf+=l.t[c];
+        }
+        if(buf)spans.push([buf,curF]);
+        return {t:l.t,spans:spans,any:any};
+      });
+    }
+    function flush(ai,bi){
+      if(!ai.length&&!bi.length)return;
+      var NA='',NB='',posA=[],posB=[];
+      ai.forEach(function(l,k){NA+=l.n;for(var x=0;x<l.n.length;x++)posA.push([k,x]);});
+      bi.forEach(function(l,k){NB+=l.n;for(var x=0;x<l.n.length;x++)posB.push([k,x]);});
+      var d=lcsFlags(NA,NB,2500000);
+      var ca=0,cb=0,x;for(x=0;x<d.fa.length;x++)ca+=d.fa[x];for(x=0;x<d.fb.length;x++)cb+=d.fb[x];
+      changed+=ca+cb;
+      rows.push({type:'blk',a:build(ai,posA,d.fa),b:build(bi,posB,d.fb),ins:ca,del:cb});
+    }
+    var bufA=[],bufB=[];
+    while(i<la.length||j<lb.length){
+      if(i<la.length&&r.fa[i]){bufA.push(la[i]);i++;continue;}
+      if(j<lb.length&&r.fb[j]){bufB.push(lb[j]);j++;continue;}
+      flush(bufA,bufB);bufA=[];bufB=[];
+      if(i<la.length&&j<lb.length){rows.push({type:'eq',a:[plain(la[i])],b:[plain(lb[j])]});i++;j++;}
+      else break;
+    }
+    flush(bufA,bufB);
+    return {rows:rows,changed:changed,pa:pa,pb:pb};
+  }
+  function ensureCmp(){
+    var b=bookOf(ccur);if(!b||!b.prev)return Promise.reject(new Error('no prev'));
+    return Promise.all([load(b.k,$('cstat')),load(b.prev.k,$('cstat'))]).then(function(ab){
+      var A=ab[0],B=ab[1];buildLines(A);buildLines(B);
+      if(!CMP[ccur])CMP[ccur]={A:A,B:B,map:pairPages(A,B),diffs:{}};
+      return CMP[ccur];
+    });
+  }
+  function diffFor(c,i,jOverride){
+    var key=i+':'+(jOverride==null?'':jOverride);
+    if(c.diffs[key])return c.diffs[key];
+    var j=jOverride==null?c.map[i].j:jOverride;
+    var d=diffPages(c.A.pages[i],j>=0?c.B.pages[j]:null);d.j=j;d.i=i;d.weak=jOverride==null&&c.map[i].weak;
+    c.diffs[key]=d;return d;
+  }
+  function spansHtml(spans,tag,ts){
+    return spans.map(function(s){var h=ts&&ts.length?markHtml(s[0],ts):esc(s[0]);return s[1]?'<'+tag+'>'+h+'</'+tag+'>':h;}).join('');
+  }
+  function hasTerm(text,ts){var n=norm(text);return ts.some(function(t){return n.indexOf(t)>=0;});}
+  function cterms(){return termsOf($('cq').value,true);}
+  function crun(all){
+    var ts=cterms(),b=bookOf(ccur);
+    if(!b||!b.prev){$('cstat').textContent='이 책은 2025년판 자료가 아직 없어요.';$('cres').innerHTML='';return;}
+    ensureCmp().then(function(c){
+      var res=$('cres'),only=$('optOnlyChg').checked;$('gone').hidden=true;$('gone').innerHTML='';
+      if(!ts.length&&!all){res.innerHTML='';$('cstat').innerHTML='<b>'+esc(c.A.title)+'</b> ↔ <b>'+esc(c.B.title)+'</b> — 낱말을 치면 올해 쪽마다 작년 같은 자리를 찾아 바뀐 글자를 보여 줘요. 「낱말 없이 바뀐 쪽 전부 보기」도 됩니다.';return;}
+      var list=[];
+      if(ts.length)searchPages(c.A,ts,true).forEach(function(h){list.push(c.A.pages.indexOf(h.pg));});
+      else c.A.pages.forEach(function(pg,i){if(/^\d+$/.test(pg.p))list.push(i);});
+      var out=[],k=0,total=list.length,nChg=0,nSame=0,nNew=0,token=++crun.token;
+      $('prog').hidden=total<60;
+      function chunk(){
+        if(token!==crun.token)return;
+        var t0=Date.now();
+        while(k<list.length&&Date.now()-t0<40){
+          var i=list[k++],d=diffFor(c,i),pa=c.A.pages[i],pb=d.j>=0?c.B.pages[d.j]:null;
+          var status=!pb?'new':(d.changed>=3?'chg':'same');
+          if(status==='chg')nChg++;else if(status==='same')nSame++;else nNew++;
+          if(only&&status==='same')continue;
+          out.push(cardHtml(c,d,pa,pb,status,ts));
+        }
+        $('prog').firstElementChild.style.width=Math.round(k/Math.max(total,1)*100)+'%';
+        if(k<list.length){setTimeout(chunk,0);return;}
+        $('prog').hidden=true;
+        $('cstat').innerHTML=(ts.length?'올해 지침 <b>'+total+'쪽</b>에서 찾음 · ':'올해 지침 본문 <b>'+total+'쪽</b> 중 · ')+'<span class="badge chg">바뀐 쪽 '+nChg+'</span> <span class="badge same">같은 쪽 '+nSame+'</span>'+(nNew?' <span class="badge new">작년에 짝 없음 '+nNew+'</span>':'')+(only?' · 바뀐 쪽만 보여요':'');
+        res.innerHTML=out.length?out.join(''):'<div class="empty">'+(ts.length?'올해 지침에 이 낱말이 없어요. 아래 「작년에만 있던 쪽」을 보세요.':'바뀐 쪽이 없어요.')+'</div>';
+        if(ts.length)goneList(c,ts);
+      }
+      chunk();
+    }).catch(function(e){console.error(e);$('cstat').textContent='자료를 불러오지 못했어요. 새로고침해 주세요.';});
+  }
+  crun.token=0;
+  function cardHtml(c,d,pa,pb,status,ts){
+    var badge=status==='new'?'<span class="badge new">작년 지침에 짝이 되는 쪽을 못 찾음 — 새로 생긴 내용일 수 있어요</span>':status==='chg'?'<span class="badge chg">바뀐 글자 '+d.changed+'</span>':'<span class="badge same">작년과 같음</span>';
+    var body='';
+    if(status!=='same'){
+      var blks=d.rows.filter(function(r){return r.type==='blk'&&(r.ins||r.del);});
+      if(ts.length){
+        var withT=blks.filter(function(r){return r.a.some(function(l){return hasTerm(l.t,ts);})||r.b.some(function(l){return hasTerm(l.t,ts);});});
+        if(withT.length)blks=withT;else body+='<div class="sn">이 낱말이 든 문장은 작년과 같고, 같은 쪽의 다른 글자가 바뀌었어요:</div>';
+      }
+      body+=blks.slice(0,2).map(function(r){
+        return '<div class="pair"><div class="b"><span class="lab">'+esc(pb?pb.p+'쪽 · '+c.B.title:'(작년 없음)')+'</span>'+(r.b.length?r.b.map(function(l){return spansHtml(l.spans,'del',ts);}).join('\n'):'<span class="none">(작년에는 없던 문장)</span>')+'</div><div class="a"><span class="lab">'+esc(pa.p+'쪽 · '+c.A.title)+'</span>'+(r.a.length?r.a.map(function(l){return spansHtml(l.spans,'ins',ts);}).join('\n'):'<span class="none">(올해는 빠진 문장)</span>')+'</div></div>';
+      }).join('');
+      if(blks.length>2)body+='<div class="sn">+ 바뀐 묶음 '+(blks.length-2)+'개 더 — 「나란히 보기」에서</div>';
+    }else if(ts.length){
+      var hit=pa.cl.filter(function(l){return hasTerm(l.t,ts);}).slice(0,2);
+      body='<div class="sn">'+hit.map(function(l){return markHtml(l.t,ts);}).join('<br>')+'</div>';
+    }
+    return '<div class="cmp"><div class="hd"><button type="button" class="yr old" data-open="'+(pb?pb.n:'')+'" data-k="'+c.B.key+'">'+(pb?esc(pb.p)+'쪽':'—')+'<small>'+c.B.title.slice(0,4)+'</small></button><span>→</span><button type="button" class="yr now" data-open="'+pa.n+'" data-k="'+c.A.key+'">'+esc(pa.p)+'쪽<small>'+c.A.title.slice(0,4)+'</small></button>'+badge+(d.weak&&pb?'<span class="badge same" title="글자로는 짝을 못 찾아 같은 쪽수를 임시로 놓았어요">쪽수로 임시 짝</span>':'')+'<span class="sp"></span><button type="button" class="ib pri" data-diff="'+d.i+'">나란히 보기</button></div>'+body+'</div>';
+  }
+  /* 작년에만 있던 쪽: 작년 쪽에 낱말이 있는데 그 쪽과 짝인 올해 쪽에는 없음 */
+  function goneList(c,ts){
+    var hitsB=searchPages(c.B,ts,true).filter(function(h){return /^\d+$/.test(h.pg.p);});if(!hitsB.length)return;
+    var inv={};c.map.forEach(function(m,i){if(m.j>=0)(inv[m.j]||(inv[m.j]=[])).push(i);});
+    var gone=[];
+    hitsB.forEach(function(h){
+      var j=c.B.pages.indexOf(h.pg),is=inv[j]||[];
+      var still=is.some(function(i){return ts.every(function(t){return c.A.pages[i].nt.indexOf(t)>=0;});});
+      if(!still)gone.push({pg:h.pg,j:j,is:is});
+    });
+    if(!gone.length)return;
+    $('gone').hidden=false;
+    $('gone').innerHTML='<h3><span class="badge gone">작년에만 있던 쪽 '+gone.length+'</span> 작년 지침에는 이 낱말이 있는데, 짝이 되는 올해 쪽에는 없어요(옮겨졌거나 빠졌을 수 있음)</h3><div class="res">'+gone.slice(0,30).map(function(g){
+      var sn=snippet(g.pg,ts.reduce(function(a,t){return a.concat(findAll(g.pg.nt,t));},[]));
+      return '<div class="hit"><button type="button" class="pg" data-openb="'+g.pg.n+'">'+esc(g.pg.p)+'쪽<small>'+c.B.title.slice(0,4)+'</small></button><div class="sn">'+sn.map(function(s){return '<p>… '+markHtml(s.seg,ts)+' …</p>';}).join('')+'</div><div class="tools">'+(g.is.length?'<button type="button" class="ib" data-diffb="'+g.is[0]+'" data-j="'+g.j+'">올해 같은 자리 보기</button>':'')+'</div></div>';
+    }).join('')+'</div>';
+  }
+  $('cres').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    if(b.dataset.open)openPage(+b.dataset.open,b.dataset.k,cterms());
+    if(b.dataset.diff)openDiffIdx(+b.dataset.diff,null,cterms());
+  });
+  $('gone').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    if(b.dataset.openb)openPage(+b.dataset.openb,CMP[ccur].B.key,cterms());
+    if(b.dataset.diffb)openDiffIdx(+b.dataset.diffb,+b.dataset.j,cterms());
+  });
+  /* 나란히 보기 창 */
+  var dvI=0,dvJ=null,dvTs=[];
+  function openDiff(nA,jOverride,ts){var c=CMP[ccur],i=c.A.pages.findIndex(function(p){return p.n===nA;});if(i>=0)openDiffIdx(i,jOverride,ts);}
+  function openDiffIdx(i,jOverride,ts){
+    var c=CMP[ccur];dvI=i;dvJ=jOverride;dvTs=ts||[];
+    var d=diffFor(c,i,jOverride),pa=d.pa,pb=d.pb;
+    $('dvTitle').textContent=(pb?c.B.title.slice(0,4)+'년 '+pb.p+'쪽':'작년 짝 없음')+' ↔ '+c.A.title.slice(0,4)+'년 '+pa.p+'쪽 · 바뀐 글자 '+d.changed;
+    var h='<div class="cols"><div class="colh old"><button type="button" class="ib" data-j="-1">◀</button>'+esc(c.B.title)+(pb?' · '+esc(pb.p)+'쪽':' · (없음)')+'<button type="button" class="ib" data-j="1">▶</button><span class="hint">작년 쪽이 어긋나면 ◀▶로 옮기기</span></div><div class="colh now">'+esc(c.A.title)+' · '+esc(pa.p)+'쪽</div>';
+    d.rows.forEach(function(r){
+      var L=r.b.map(function(l){return spansHtml(l.spans,'del',dvTs);}).join('\n'),R=r.a.map(function(l){return spansHtml(l.spans,'ins',dvTs);}).join('\n');
+      h+='<div class="row '+r.type+'"><div class="l">'+(L||'<span class="none">—</span>')+'</div><div class="r">'+(R||'<span class="none">—</span>')+'</div></div>';
+    });
+    h+='</div>';
+    $('dvBody').innerHTML=h;$('dv').classList.add('on');
+    var first=$('dvBody').querySelector('mark')||$('dvBody').querySelector('.row.blk');if(first)first.scrollIntoView({block:'center'});else $('dvBody').scrollTop=0;
+  }
+  $('dvBody').addEventListener('click',function(e){
+    var b=e.target.closest('button[data-j]');if(!b)return;var c=CMP[ccur];
+    var j=dvJ==null?c.map[dvI].j:dvJ;if(j<0)j=Math.min(dvI,c.B.pages.length-1);
+    j+=+b.dataset.j;if(j<0||j>=c.B.pages.length)return;openDiffIdx(dvI,j,dvTs);
+  });
+  $('dvCopy').onclick=function(){
+    var c=CMP[ccur],d=diffFor(c,dvI,dvJ),lines=[];
+    d.rows.forEach(function(r){if(r.type!=='blk'||!(r.ins||r.del))return;
+      r.b.filter(function(l){return l.any;}).forEach(function(l){lines.push('[작년 '+(d.pb?d.pb.p:'-')+'쪽] '+l.t);});
+      r.a.filter(function(l){return l.any;}).forEach(function(l){lines.push('[올해 '+d.pa.p+'쪽] '+l.t);});
+    });
+    copy('『'+c.B.title+'』 → 『'+c.A.title+'』 바뀐 문장\n'+lines.join('\n'),$('cnote'));
+    $('dv').classList.remove('on');
+  };
+
+  /* 주소 #q=낱말&b=책&t=cmp */
+  var startCmp=false;
+  try{var hp=new URLSearchParams(location.hash.slice(1));if(hp.get('b')&&FAQ[hp.get('b')])cur=hp.get('b');if(hp.get('q')){$('q').value=hp.get('q');$('cq').value=hp.get('q');}if(hp.get('t')==='cmp'){startCmp=true;if(bookOf(cur).prev)ccur=cur;}}catch(e){}
+  renderBooks();run();
+  if(startCmp)setTab('cmp');
+})();
+</script>
+</body>
+</html>
